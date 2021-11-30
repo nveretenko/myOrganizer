@@ -1,0 +1,35 @@
+<div *ngFor="let priority of priorities, let index = index" class="vertical-middle priorities">
+
+  <div class="row align-self-baseline">
+
+    <div class="ml-2">
+      <a (click)="onEditPriority(priority)" class="pointer"> {{priority.title}}</a>
+    </div>
+
+    <div class="d-flex ml-auto">
+
+      <div class="mr-1">
+        <span [(colorPicker)]="priority.color" [style.background]="priority.color" class="color-circle"></span>
+      </div>
+
+      <div class="mr-1">
+        <p (click)="delete(priority)" class="pointer gray color-delete">
+          <mat-icon>delete</mat-icon>
+        </p>
+      </div>
+
+      <div class="mr-2">
+        <p (click)="onEditPriority(priority)" class="pointer gray color-edit">
+          <mat-icon>edit</mat-icon>
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<p (click)="onAddPriority()" class="link little pointer">
+  Добавить приоритет
+</p>

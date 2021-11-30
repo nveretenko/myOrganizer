@@ -1,0 +1,49 @@
+<mat-drawer-container>
+
+  <mat-drawer mode="side" [opened]="opened">
+    <app-categories 
+      [categories]="categories" 
+      [selectedCategory]="selectedCategory"
+      (selectCategory)="onSelectCategory($event)" 
+      (deleteCategory)="onDeleteCategory($event)"
+      (updateCategory)="onUpdateCategory($event)" 
+      (addCategory)="onAddCategory($event)">
+    </app-categories>
+  </mat-drawer>
+
+    <div class="main-panel">
+
+      <app-header 
+        [categoryName]="selectedCategory ? selectedCategory.title:'Все'" 
+        (toggleStat)="toggleStat($event)"
+        [showStat]="showStat"
+        (toggleMenu)="toggleMenu()"
+        [opened]="opened"
+        >
+      </app-header>
+
+      <div class="content mt-0">
+        <div class="container-fluid">
+          <app-statistics 
+            [totalTasksInCategory]="totalTasksCountInCategory"
+            [completeTasksInCategory]="completedCountInCategory"
+            [uncompleteTasksInCategory]="uncompletedCountInCategory" 
+            [showStat]="showStat">
+          </app-statistics>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <app-tasks 
+              [tasks]="tasks" 
+              (updateTask)="onUpdateTask($event)" 
+              (deleteTask)="onDeleteTask($event)"
+              (selectCategory)="onSelectCategory($event)" 
+              (addTask)="onAddTask($event)">
+            </app-tasks>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</mat-drawer-container>

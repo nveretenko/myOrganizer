@@ -1,0 +1,41 @@
+.sidebar {
+	background-image: url('../../../assets/img/side-bar-min.jpg');
+	background-size: cover;
+}
+
+.edit-category-icon-area {
+	width: 15%;
+	display: inline-block;
+	text-align: left;
+	font-size: 13px;
+}
+
+.category-title {
+	display: inline-block;
+	width: 70%;
+	font-size: 16px;
+}
+
+.categories-title {
+	display: inline-block;
+	width: 85%;
+	font-size: 1rem !important;
+	font-weight: bolder;
+}
+
+.edit-category-icon {
+	color:#eec3c3;
+}
+
+.active .categories-title {
+  font-size: 1rem;
+  background-color: #848006 !important;
+}
+
+.logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 30px;
+  font-size: 1.3rem;
+}
