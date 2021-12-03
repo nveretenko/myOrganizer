@@ -1,4 +1,5 @@
-<mat-drawer-container>
+<mat-drawer-container autosize>
+<!-- autosize добавлен, т.к. в интернет-версии наблюдался баг: неправильный margin-left mat-drawer-content -->
 
   <mat-drawer mode="side" [opened]="opened">
     <app-categories 
