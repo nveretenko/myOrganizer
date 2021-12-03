@@ -20,21 +20,16 @@
       <ng-container matColumnDef="id">
         <th *matHeaderCellDef mat-header-cell></th>
         <td *matCellDef="let index = index;" class="col-id" mat-cell>
-
           {{index + 1}}
-
         </td>
       </ng-container>
-
 
       <!-- название задачи-->
       <ng-container matColumnDef="title">
         <th *matHeaderCellDef mat-header-cell mat-sort-header> Название</th>
         <td (click)="openEditTaskDialog(task)" *matCellDef="let task" [class.completed]="task.completed"
           class="col-title pointer" mat-cell>
-
           {{task.title}}
-
         </td>
       </ng-container>
 
@@ -43,9 +38,7 @@
         <th *matHeaderCellDef mat-header-cell mat-sort-header> Срок</th>
         <td *matCellDef="let task" [ngClass]="{'completed': task.completed, 'novalue': task.date == null}"
           class="col-date" mat-cell>
-
           {{task.date | taskDate}}
-
         </td>
       </ng-container>
 
@@ -54,10 +47,7 @@
         <th *matHeaderCellDef mat-header-cell mat-sort-header> Приоритет</th>
         <td *matCellDef="let task" class="col-priority"
           [ngClass]="{'completed': task.completed, 'novalue': task.priority == null}" mat-cell>
-
           {{task.priority ? task.priority.title : "Без приоритета"}}
-
-
         </td>
       </ng-container>
 
@@ -68,10 +58,7 @@
           (click)="!task.completed && task.category && onSelectCategory(task.category)"
           [ngClass]="{'completed': task.completed, 'novalue': task.category == null, 'link': !task.completed && task.category}"
           mat-cell>
-
           {{task.category ? task.category.title : "Без категории"}}
-
-
         </td>
       </ng-container>
 
@@ -84,9 +71,7 @@
             <mat-icon aria-hidden="false">delete</mat-icon>
           </button>
 
-
           <button (click)="openEditTaskDialog(task)" class="edit-icon" mat-icon-button>
-
             <mat-icon aria-hidden="false">edit</mat-icon>
           </button>
 
@@ -141,11 +126,11 @@
       </div>
 
       <div class="row">
-        <div class="mobile-title-inner  col-9 col-md-10 align-top">
+        <div class="mobile-title-inner  col-8 col-md-10 align-top">
           <div [class.completed]="task.completed" class="mobile-title">{{task.title}}</div>
         </div>
 
-        <div class="col-2 col-md-1 align-top mobile-check text-right">
+        <div class="col-3 col-md-1 align-top mobile-check text-right">
           <button class="nowidth" (click)="$event.stopPropagation(); onToggleStatus(task)" *ngIf="!task.completed"
             mat-icon-button>
             <mat-icon (click)="$event.stopPropagation(); onToggleStatus(task)" class="check-icon-notcompleted">
